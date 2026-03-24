@@ -1,0 +1,25 @@
+!<thin>
+//                                              194       `
+irqchip.o/
+irq-gic.o/
+irq-gic-common.o/
+irq-gic-v3.o/
+irq-gic-v3-mbi.o/
+irq-gic-v3-its.o/
+irq-gic-v3-its-platform-msi.o/
+irq-gic-v4.o/
+irq-partition-percpu.o/
+irq-mtk-sysirq.o/
+irq-mtk-cirq.o/
+
+/0              0           0     0     644     4080      `
+/11             0           0     0     644     255688    `
+/22             0           0     0     644     18168     `
+/40             0           0     0     644     317592    `
+/54             0           0     0     644     180848    `
+/72             0           0     0     644     581872    `
+/90             0           0     0     644     102880    `
+/121            0           0     0     644     87304     `
+/135            0           0     0     644     163792    `
+/159            0           0     0     644     112184    `
+/177            0           0     0     644     120328    `

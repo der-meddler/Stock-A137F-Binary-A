@@ -1,3 +1,5 @@
+ccflags-y += -I$(src)
+
 # SPDX-License-Identifier: GPL-2.0
 obj-$(CONFIG_PM_DEVFREQ)	+= devfreq.o
 obj-$(CONFIG_PM_DEVFREQ_EVENT)	+= devfreq-event.o

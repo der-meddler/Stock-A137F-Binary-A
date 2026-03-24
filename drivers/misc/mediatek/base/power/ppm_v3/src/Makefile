@@ -28,7 +28,7 @@ else
 	USE_PPM_CPI = "false"
 endif
 
-
+subdir-ccflags-y += -I$(srctree)/drivers/misc/mediatek/base/power/ppm_v3/src/mach/mt6768
 ccflags-y += \
 	-I$(PPM_ROOT_DIR)/inc \
 	-I$(srctree)/drivers/misc/mediatek/include/mt-plat/$(CONFIG_MTK_PLATFORM)/include	\

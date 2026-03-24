@@ -14,7 +14,7 @@
 #include "mtk_cpufreq_internal.h"
 #include "mtk_cpufreq_platform.h"
 #include "mtk_cpufreq_debug.h"
-#include "mtk_cpufreq_hybrid.h"
+#include "../mtk_cpufreq_hybrid.h"
 #include "mtk_cpufreq_opp_table.h"
 
 #define DCM_ENABLE 1

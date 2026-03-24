@@ -1,0 +1,1 @@
+cmd_drivers/media/platform/mtk-vcu/built-in.a :=  rm -f drivers/media/platform/mtk-vcu/built-in.a; aarch64-none-linux-gnu-ar rcSTPD drivers/media/platform/mtk-vcu/built-in.a drivers/media/platform/mtk-vcu/mtk_vcu.o drivers/media/platform/mtk-vcu/mtk_vcodec_mem.o

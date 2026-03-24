@@ -23,7 +23,7 @@
 #endif
 
 #include <mtk_idle_profile.h>
-#include <mtk_idle_module.h>
+#include "mtk_idle_module.h"
 
 /* [ByChip] Internal weak function: implemented in mtk_idle_cond_check.c */
 int __attribute__((weak)) mtk_idle_cond_append_info(
@@ -220,7 +220,7 @@ bool mtk_idle_latency_profile_is_on(void)
 }
 
 static unsigned int ProfileLatency[NR_PIDX];
-void mtk_idle_latency_profile(int idx)
+void mtk_idle_latency_profile(unsigned int idle_type, int  idx)
 {
 	unsigned int cur_count = 0;
 
@@ -236,12 +236,13 @@ void mtk_idle_latency_profile(int idx)
 		ProfileLatency[idx>>1] = cur_count;
 }
 
-static char plog[256] = { 0 };
+// static char plog[256] = { 0 };
 #define log(fmt, args...) \
 		(p += scnprintf(p, sizeof(plog) - strlen(plog), fmt, ##args))
 
-void mtk_idle_latency_profile_result(struct MTK_IDLE_MODEL_CLERK *clerk)
+void mtk_idle_latency_profile_result(unsigned int idle_type)
 {
+#if 0
 	unsigned int i;
 	char *p = plog;
 
@@ -274,5 +275,6 @@ void mtk_idle_latency_profile_result(struct MTK_IDLE_MODEL_CLERK *clerk)
 	}
 
 	printk_deferred("[name:spm&]Power/latency_profile %s\n", plog);
+#endif
 }
 

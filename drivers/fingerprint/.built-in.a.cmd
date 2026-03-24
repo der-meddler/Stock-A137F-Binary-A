@@ -1,0 +1,1 @@
+cmd_drivers/fingerprint/built-in.a :=  rm -f drivers/fingerprint/built-in.a; aarch64-none-linux-gnu-ar rcSTPD drivers/fingerprint/built-in.a drivers/fingerprint/fingerprint_common.o drivers/fingerprint/fingerprint_common_mtk.o drivers/fingerprint/et5xx-spi.o drivers/fingerprint/et5xx-spi_data_transfer.o drivers/fingerprint/fingerprint_sysfs.o

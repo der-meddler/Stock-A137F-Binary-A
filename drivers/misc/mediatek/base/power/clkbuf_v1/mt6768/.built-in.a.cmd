@@ -1,0 +1,1 @@
+cmd_drivers/misc/mediatek/base/power/clkbuf_v1/mt6768/built-in.a :=  rm -f drivers/misc/mediatek/base/power/clkbuf_v1/mt6768/built-in.a; aarch64-none-linux-gnu-ar rcSTPD drivers/misc/mediatek/base/power/clkbuf_v1/mt6768/built-in.a drivers/misc/mediatek/base/power/clkbuf_v1/mt6768/mtk_clkbuf_hw.o

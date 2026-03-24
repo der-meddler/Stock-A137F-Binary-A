@@ -14,3 +14,5 @@
 export CPUFREQ_ROOT_DIR ?= $(srctree)/drivers/misc/mediatek/base/power/cpufreq_v1
 
 obj-y += src/
+
+ccflags-y += -I$(srctree)/drivers/misc/mediatek/include/mt-plat/mt6768/include/mach

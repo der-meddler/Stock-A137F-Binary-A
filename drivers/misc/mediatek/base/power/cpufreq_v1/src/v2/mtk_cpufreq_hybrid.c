@@ -4,6 +4,9 @@
 */
 
 /* system includes */
+#include <linux/pm_qos.h>
+#include <linux/pm_opp.h>
+#include "mtk_cpufreq_api.h"
 #include <linux/kernel.h>
 #include <linux/module.h>
 #include <linux/sched.h>

@@ -1,0 +1,26 @@
+!<thin>
+//                                              260       `
+aed/aed-main.o/
+aed/aee-common.o/
+aed/reboot-reason.o/
+mrdump/mboot_params.o/
+mrdump/mrdump_control.o/
+mrdump/mrdump_hw.o/
+mrdump/mrdump_full.o/
+mrdump/mrdump_mini.o/
+mrdump/mrdump_panic.o/
+mrdump/mrdump_helper.o/
+mrdump/mrdump_arm64.o/
+hangdet/aee_hangdet.o/
+/0              0           0     0     644     404248    `
+/16             0           0     0     644     42664     `
+/34             0           0     0     644     138680    `
+/55             0           0     0     644     486152    `
+/78             0           0     0     644     130648    `
+/103            0           0     0     644     6064      `
+/123            0           0     0     644     132432    `
+/145            0           0     0     644     354848    `
+/167            0           0     0     644     152816    `
+/190            0           0     0     644     299264    `
+/214            0           0     0     644     4256      `
+/237            0           0     0     644     394792    `

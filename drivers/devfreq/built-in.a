@@ -1,0 +1,17 @@
+!<thin>
+//                                              220       `
+devfreq.o/
+helio-dvfsrc-ipi.o/
+helio-dvfsrc-v2/helio-dvfsrc.o/
+helio-dvfsrc-v2/helio-dvfsrc-mt6768.o/
+helio-dvfsrc-v2/helio-dvfsrc-opp-mt6768.o/
+helio-dvfsrc-v2/helio-dvfsrc-opp.o/
+helio-dvfsrc-v2/helio-dvfsrc-sysfs.o/
+
+/0              0           0     0     644     231032    `
+/11             0           0     0     644     52480     `
+/31             0           0     0     644     233208    `
+/63             0           0     0     644     511944    `
+/102            0           0     0     644     125160    `
+/145            0           0     0     644     19704     `
+/181            0           0     0     644     108976    `

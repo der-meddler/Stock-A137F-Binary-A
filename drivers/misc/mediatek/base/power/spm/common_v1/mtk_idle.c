@@ -19,7 +19,7 @@
 #include <mtk_spm_resource_req_internal.h>
 #include <mtk_idle_fs/mtk_idle_sysfs.h>
 
-#include <mtk_idle_module.h>
+#include "mtk_idle_module.h"
 
 /* [ByChip] Internal weak functions: implemented in mtk_idle_cond_check.c */
 void __attribute__((weak)) mtk_idle_cg_monitor(int sel) {}

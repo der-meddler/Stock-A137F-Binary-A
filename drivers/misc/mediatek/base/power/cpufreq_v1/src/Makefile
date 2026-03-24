@@ -1,3 +1,6 @@
+ccflags-y += -Wno-error=implicit-function-declaration
+ccflags-y += -I$(srctree)/drivers/misc/mediatek/include/mt-plat/mt6768/include/mach
+ccflags-y += -I$(srctree)/drivers/misc/mediatek/base/power/cpufreq_v1/src
 #
 # Copyright (C) 2020 MediaTek Inc.
 #
@@ -11,6 +14,7 @@
 # GNU General Public License for more details.
 #
 
+ccflagy-y += -I$(src)
 ccflags-y += -DMET_USER_EVENT_SUPPORT
 
 ifeq ($(CONFIG_BUILD_ARM64_APPENDED_DTB_IMAGE_NAMES),"mediatek/mt6885_3gear")

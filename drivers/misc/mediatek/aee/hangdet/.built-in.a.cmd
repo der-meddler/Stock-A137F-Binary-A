@@ -1,0 +1,1 @@
+cmd_drivers/misc/mediatek/aee/hangdet/built-in.a :=  rm -f drivers/misc/mediatek/aee/hangdet/built-in.a; aarch64-none-linux-gnu-ar rcSTPD drivers/misc/mediatek/aee/hangdet/built-in.a drivers/misc/mediatek/aee/hangdet/aee_hangdet.o

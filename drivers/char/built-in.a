@@ -1,0 +1,18 @@
+!<thin>
+//                                              118       `
+mem.o/
+random.o/
+misc.o/
+hw_random/core.o/
+hw_random/mtk-rng.o/
+hw_random/mt67xx-rng.o/
+rpmb/rpmb-mtk.o/
+rpmb/core.o/
+/0              0           0     0     644     225416    `
+/7              0           0     0     644     655672    `
+/17             0           0     0     644     157208    `
+/25             0           0     0     644     210800    `
+/43             0           0     0     644     111056    `
+/64             0           0     0     644     55736     `
+/88             0           0     0     644     343144    `
+/105            0           0     0     644     91096     `

@@ -1,0 +1,1 @@
+cmd_drivers/mfd/built-in.a :=  rm -f drivers/mfd/built-in.a; aarch64-none-linux-gnu-ar rcSTPD drivers/mfd/built-in.a drivers/mfd/mfd-core.o drivers/mfd/syscon.o drivers/mfd/mt6358-core.o drivers/mfd/mt635x-ot-debug.o drivers/mfd/mt6358-misc.o
