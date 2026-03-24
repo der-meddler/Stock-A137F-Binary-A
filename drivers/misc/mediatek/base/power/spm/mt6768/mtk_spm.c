@@ -21,11 +21,19 @@
 #include <mtk_sleep.h>	    /* slp_module_init */
 #include <mt-plat/aee.h>	/* aee_xxx */
 
-#include <mtk_spm_irq.h>
-#include <mtk_spm_internal.h>
-#include <mtk_sspm.h>
+#include "mtk_spm_irq.h"
+#include "mtk_spm_internal.h"
+#include "mtk_sspm.h"
 
 #include <mtk_idle_fs/mtk_idle_sysfs.h>
+
+/* Fix for Mediatek naming mismatches - Final Version */
+#define spm_read mtk_spm_read_register
+#define PWR_STATUS SPM_PWRSTA
+#define MD1_PWR_CON SPM_MD1_PWR_CON
+#define SPARE_ACK_MASK SPM_SPARE_ACK_MASK
+#define PCM_REG13_DATA (0x0134)
+
 DEFINE_SPINLOCK(__spm_lock);
 
 /* Note: implemented in mtk_spm_dram.c */

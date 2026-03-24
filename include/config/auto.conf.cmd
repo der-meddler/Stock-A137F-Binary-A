@@ -32,11 +32,6 @@ deps_config := \
 	lib/crypto/Kconfig \
 	crypto/async_tx/Kconfig \
 	crypto/Kconfig \
-	security/samsung/five/Kconfig \
-	security/samsung/dsms/Kconfig \
-	security/samsung/proca/gaf/Kconfig \
-	security/samsung/proca/Kconfig \
-	security/samsung/defex_lsm/Kconfig \
 	security/Kconfig.hardening \
 	security/integrity/evm/Kconfig \
 	security/integrity/ima/Kconfig \

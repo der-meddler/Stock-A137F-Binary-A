@@ -8,12 +8,12 @@
 
 #include <linux/kernel.h>
 #include <linux/cpumask.h>
-#include <mtk_idle_internal.h>
-#include <mtk_idle_module.h>
+#include "mtk_idle_internal.h"
+#include "mtk_idle_module.h"
 
 unsigned long long idle_get_current_time_ms(void);
 
-void mtk_idle_latency_profile_result(struct MTK_IDLE_MODEL_CLERK *clerk);
+void mtk_idle_latency_profile_result(unsigned int idle_type);
 
 void mtk_idle_block_reason_report(struct MTK_IDLE_MODEL_CLERK const *clerk);
 

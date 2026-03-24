@@ -10,7 +10,7 @@
 #include <linux/suspend.h>
 #include <linux/console.h>
 
-#include <mtk_sleep_internal.h>
+#include "mtk_sleep_internal.h"
 #include <mtk_spm_internal.h> /* mtk_idle_cond_check */
 #include <mtk_spm_suspend_internal.h>
 #include <mtk_idle_fs/mtk_idle_sysfs.h>

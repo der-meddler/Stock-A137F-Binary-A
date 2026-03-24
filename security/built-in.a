@@ -1,5 +1,5 @@
 !<thin>
-//                                              1000      `
+//                                              752       `
 keys/gc.o/
 keys/key.o/
 keys/keyring.o/
@@ -40,15 +40,6 @@ integrity/iint.o/
 integrity/integrity_audit.o/
 integrity/digsig.o/
 integrity/digsig_asymmetric.o/
-samsung/proca/gaf/gaf_v6.o/
-samsung/dsms/dsms_access_control.o/
-samsung/dsms/dsms_init.o/
-samsung/dsms/dsms_kernel_api.o/
-samsung/dsms/dsms_policy.o/
-samsung/dsms/dsms_rate_limit.o/
-samsung/dsms/dsms_netlink.o/
-samsung/dsms/dsms_preboot_buffer.o/
-
 /0              0           0     0     644     155792    `
 /11             0           0     0     644     221896    `
 /23             0           0     0     644     205168    `
@@ -89,11 +80,3 @@ samsung/dsms/dsms_preboot_buffer.o/
 /672            0           0     0     644     113128    `
 /701            0           0     0     644     118928    `
 /721            0           0     0     644     116976    `
-/752            0           0     0     644     9664      `
-/780            0           0     0     644     9472      `
-/816            0           0     0     644     9872      `
-/842            0           0     0     644     8296      `
-/874            0           0     0     644     4120      `
-/902            0           0     0     644     10888     `
-/934            0           0     0     644     78056     `
-/963            0           0     0     644     62968     `

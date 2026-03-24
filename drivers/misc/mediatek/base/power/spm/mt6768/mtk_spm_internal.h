@@ -16,7 +16,7 @@
 #include <linux/arm-smccc.h>
 
 #include <mtk_spm_reg.h>
-#include <pwr_ctrl.h>
+#include "pwr_ctrl.h"
 //FIXME
 #include <mtk_spm.h>
 

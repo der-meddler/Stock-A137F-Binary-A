@@ -7,8 +7,31 @@
 #include <linux/module.h>
 #include <linux/kernel.h>
 
-#include <mtk_spm_internal.h>
+#include "mtk_spm_internal.h"
 #include "mtk_sspm.h"
+
+/* Fix for TWAM naming and function prototypes */
+#include "mtk_spm.h"
+
+// Explicitly tell the compiler these exist
+extern unsigned int mtk_spm_read_register(int reg);
+extern void mtk_spm_write_register(unsigned int val, int reg);
+
+// Map the old names to the new ones and SWAP the write arguments
+#define spm_read mtk_spm_read_register
+#define spm_write(reg, val) mtk_spm_write_register(val, reg)
+
+#ifndef SPM_TWAM_CON
+#define SPM_TWAM_CON (0x02CC)
+#endif
+#ifndef SPM_IRQ_MASK
+#define SPM_IRQ_MASK (0x018C)
+#endif
+#ifndef SPM_IRQ_STA
+#define SPM_IRQ_STA (0x0190)
+#endif
+#define TWAM_SPEED_MODE_ENABLE_LSB (1 << 0)
+#define TWAM_ENABLE_LSB (1 << 0)
 
 static twam_handler_t spm_twam_handler;
 static unsigned int idle_sel;

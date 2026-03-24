@@ -3,7 +3,7 @@
  * Copyright (c) 2019 MediaTek Inc.
 */
 
-#include <mtk_idle_module.h>
+#include "mtk_idle_module.h"
 #include <linux/printk.h>
 #include <linux/mutex.h>
 #include <linux/delay.h>
@@ -12,7 +12,7 @@
 #if defined(CONFIG_THERMAL)
 #include <mtk_thermal.h> /* mtkTTimer_start/cancel_timer */
 #endif
-#include <mtk_idle_profile.h>
+#include "mtk_idle_profile.h"
 #include <linux/atomic.h>
 
 DEFINE_MUTEX(mtk_idle_module_locker);
@@ -29,6 +29,8 @@ extern int mtk8250_request_to_sleep(void);
 extern int mtk8250_request_to_wakeup(void);
 extern void mtk8250_backup_dev(void);
 extern void mtk8250_restore_dev(void);
+extern int ufs_cb_before_idle(void);
+extern void ufs_cb_after_idle(void);
 
 /* Sometimes the idle type's sequence won't be same as
  *  the selection's sequence, so we need map to idle model
@@ -341,36 +343,36 @@ int mtk_idle_enter(int idle_type,
 
 	__mtk_idle_footprint(IDLE_FP_ENTER);
 
-	__profile_idle_stop(PIDX_SELECT_TO_ENTER);
+	__profile_idle_stop(idle_type, PIDX_SELECT_TO_ENTER);
 
-	__profile_idle_start(PIDX_ENTER_TOTAL);
+	__profile_idle_start(idle_type, PIDX_ENTER_TOTAL);
 
 	/* Disable rcu lock checking */
 	rcu_irq_enter_irqson();
 
 	/* idle pre handler: setup notification/thermal/ufs */
-	__profile_idle_start(PIDX_PRE_HANDLER);
+	__profile_idle_start(idle_type, PIDX_PRE_HANDLER);
 	op_cond |= mtk_idle_pre_handler(idle_type, mod->notify.id_enter);
-	__profile_idle_stop(PIDX_PRE_HANDLER);
+	__profile_idle_stop(idle_type, PIDX_PRE_HANDLER);
 
 	__mtk_idle_footprint(IDLE_FP_PREHANDLER);
 
 	/* [by_chip] pre power setting: setup sleep voltage and power mode */
-	__profile_idle_start(PIDX_PWR_PRE_WFI);
+	__profile_idle_start(idle_type, PIDX_PWR_PRE_WFI);
 	mtk_idle_power_pre_process(idle_type, op_cond);
-	__profile_idle_stop(PIDX_PWR_PRE_WFI);
+	__profile_idle_stop(idle_type, PIDX_PWR_PRE_WFI);
 
 	/* [by_chip] spm setup */
-	__profile_idle_start(PIDX_SPM_PRE_WFI);
+	__profile_idle_start(idle_type, PIDX_SPM_PRE_WFI);
 	mtk_idle_pre_process_by_chip(idle_type, cpu, op_cond, idle_flag);
-	__profile_idle_stop(PIDX_SPM_PRE_WFI);
+	__profile_idle_stop(idle_type, PIDX_SPM_PRE_WFI);
 
 	__mtk_idle_footprint(IDLE_FP_PCM_SETUP);
 
 	/* [by_chip] pre power setting sync wait */
-	__profile_idle_start(PIDX_PWR_PRE_WFI_WAIT);
+	__profile_idle_start (idle_type, PIDX_PWR_PRE_WFI_WAIT);
 	mtk_idle_power_pre_process_async_wait(idle_type, op_cond);
-	__profile_idle_stop(PIDX_PWR_PRE_WFI_WAIT);
+	__profile_idle_stop(idle_type, PIDX_PWR_PRE_WFI_WAIT);
 
 	__mtk_idle_footprint(IDLE_FP_PWR_PRE_SYNC);
 
@@ -389,9 +391,9 @@ int mtk_idle_enter(int idle_type,
 	__mtk_idle_footprint(IDLE_FP_ENTER_WFI);
 
 	/* [by_chip] enter cpuidle driver for wfi */
-	__profile_idle_stop(PIDX_ENTER_TOTAL);
+	__profile_idle_stop(idle_type, PIDX_ENTER_TOTAL);
 	mtk_idle_trigger_wfi(idle_type, idle_flag, cpu);
-	__profile_idle_start(PIDX_LEAVE_TOTAL);
+	__profile_idle_start(idle_type, PIDX_LEAVE_TOTAL);
 
 	__mtk_idle_footprint(IDLE_FP_LEAVE_WFI);
 
@@ -405,40 +407,40 @@ RESTORE_UART:
 	__mtk_idle_footprint(IDLE_FP_UART_RESUME);
 
 	/* [by_chip] post power setting: restore  */
-	__profile_idle_start(PIDX_PWR_POST_WFI);
+	__profile_idle_start(idle_type, PIDX_PWR_POST_WFI);
 	mtk_idle_power_post_process(idle_type, op_cond);
-	__profile_idle_stop(PIDX_PWR_POST_WFI);
+	__profile_idle_stop(idle_type, PIDX_PWR_POST_WFI);
 
 	/* [by_chip] spm clean up */
-	__profile_idle_start(PIDX_SPM_POST_WFI);
+	__profile_idle_start(idle_type, PIDX_SPM_POST_WFI);
 	mtk_idle_post_process_by_chip(idle_type, cpu, op_cond, idle_flag);
-	__profile_idle_stop(PIDX_SPM_POST_WFI);
+	__profile_idle_stop(idle_type, PIDX_SPM_POST_WFI);
 
 	__mtk_idle_footprint(IDLE_FP_PCM_CLEANUP);
 
 	/* idle post handler: setup notification/thermal/ufs */
-	__profile_idle_start(PIDX_POST_HANDLER);
+	__profile_idle_start(idle_type, PIDX_POST_HANDLER);
 	mtk_idle_post_handler(idle_type, mod->notify.id_leave);
-	__profile_idle_stop(PIDX_POST_HANDLER);
+	__profile_idle_stop(idle_type, PIDX_POST_HANDLER);
 
 	__mtk_idle_footprint(IDLE_FP_POSTHANDLER);
 
 	/* [by_chip] post power setting sync wait */
-	__profile_idle_start(PIDX_PWR_POST_WFI_WAIT);
+	__profile_idle_start(idle_type, PIDX_PWR_POST_WFI_WAIT);
 	mtk_idle_power_post_process_async_wait(idle_type, op_cond);
-	__profile_idle_stop(PIDX_PWR_POST_WFI_WAIT);
+	__profile_idle_stop(idle_type, PIDX_PWR_POST_WFI_WAIT);
 
 	/* Eable rcu lock checking */
 	rcu_irq_exit_irqson();
 
 	__mtk_idle_footprint(IDLE_FP_PWR_POST_SYNC);
 
-	__profile_idle_stop(PIDX_LEAVE_TOTAL);
+	__profile_idle_stop(idle_type, PIDX_LEAVE_TOTAL);
 
 	__mtk_idle_footprint(IDLE_FP_LEAVE);
 
 	/* output idle latency profiling result if enabled */
-	mtk_idle_latency_profile_result(&mod->clerk);
+	mtk_idle_latency_profile_result(idle_type);
 
 	__mtk_idle_footprint_stop();
 
