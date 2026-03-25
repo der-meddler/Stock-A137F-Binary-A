@@ -11,7 +11,18 @@
 #include <mtk_dramc.h>
 #endif /* CONFIG_MTK_DRAMC */
 
-#include <mtk_spm_internal.h>
+#include "mtk_spm_internal.h"
+
+/* Fix for DRAM naming and missing constants */
+#define spm_read mtk_spm_read_register
+
+#ifndef SPM_POWER_ON_VAL0
+#define SPM_POWER_ON_VAL0           (0x0610)
+#endif
+
+/* PHYPLL bit-masks for DRAM stability */
+#define R0_SC_PHYPLL_MODE_SW_PCM    (1 << 0)
+#define R0_SC_PHYPLL2_MODE_SW_PCM   (1 << 1)
 
 int spmfw_idx = -1;
 

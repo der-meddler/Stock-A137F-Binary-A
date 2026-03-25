@@ -14,7 +14,7 @@
 #include <linux/interrupt.h>
 #include <linux/wakeup_reason.h>
 #include <asm/setup.h>
-#include <mtk_spm_internal.h>
+#include "mtk_spm_internal.h"
 
 #if defined(CONFIG_MTK_WATCHDOG) && defined(CONFIG_MTK_WD_KICKER)
 #include <mt-plat/mtk_wd_api.h>
@@ -22,10 +22,10 @@
 #if defined(CONFIG_MTK_PMIC) || defined(CONFIG_MTK_PMIC_NEW_ARCH)
 #include <mt-plat/upmu_common.h>
 #endif
-#include <mtk_spm_irq.h>
+#include "mtk_spm_irq.h"
 
 
-#include <mtk_spm_suspend_internal.h>
+#include "mtk_spm_suspend_internal.h"
 #include <mtk_spm_resource_req_internal.h>
 #include <mtk_spm_resource_req.h>
 
@@ -39,7 +39,39 @@
 #include <mtk_hps_internal.h>
 #endif
 #include <mtk_sleep_internal.h>
-#include <mtk_idle_module.h>
+#include <mtk_idle_module.h
+
+/* Master Suspend Translation Block - Clean Version */
+#define spm_read mtk_spm_read_register
+
+// 1. Hardware Wake Source Bit-Offsets
+#define WAKE_SRC_R12_SCP_SPM_IRQ_B         (1)
+#define R12_SCP_SPM_IRQ_B                  (1)
+#define WAKE_SRC_R12_CCIF0_EVENT_B         (2)
+#define WAKE_SRC_R12_CLDMA_EVENT_B         (4)
+#define WAKE_SRC_R12_MD2AP_PEER_EVENT_B    (10)
+#define WAKE_SRC_R12_CCIF1_EVENT_B         (14)
+#define WAKE_SRC_R12_CONN2AP_SPM_WAKEUP_B  (15)
+
+// 2. Feature Flags and Register Offsets
+#define SPM_FLAG_DIS_VCORE_DVS             (1U << 0)
+#define SPM_FLAG_DIS_VCORE_DFS             (1U << 1)
+#define SPM_FLAG_DIS_ATF_ABORT             (1U << 2)
+#define SPM_FLAG_SUSPEND_OPTION            (1U << 3)
+#define SPM_FLAG_DIS_INFRA_PDN             (1U << 4)
+#define SPM_FLAG_KEEP_CSYSPWRUPACK_HIGH    (1U << 5)
+#define SPM_FLAG_DEEPIDLE_OPTION           (1U << 6)
+#define SPM_FLAG1_ENABLE_CPU_SLEEP_VOLT    (1U << 7)
+
+#define SPM_POWER_ON_VAL1                  (0x0614)
+
+// 3. Logic Helper Macros
+#ifndef is_infra_pdn
+#define is_infra_pdn(flags) (!!((flags) & SPM_FLAG_DIS_INFRA_PDN))
+#endif
+#ifndef is_cpu_pdn
+#define is_cpu_pdn(flags)   (!!((flags) & SPM_FLAG1_ENABLE_CPU_SLEEP_VOLT))
+#endif
 
 static int spm_dormant_sta;
 int spm_ap_mdsrc_req_cnt;

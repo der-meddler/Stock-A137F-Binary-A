@@ -1,5 +1,5 @@
-drivers/misc/mediatek/base/power/spm/mt6768/.tmp_mtk_spm_irq.o: \
-  drivers/misc/mediatek/base/power/spm/mt6768/mtk_spm_irq.c \
+drivers/misc/mediatek/base/power/spm/mt6768/.tmp_mtk_spm_suspend.o: \
+  drivers/misc/mediatek/base/power/spm/mt6768/mtk_spm_suspend.c \
   include/linux/kconfig.h include/generated/autoconf.h \
   include/linux/compiler_types.h include/linux/compiler-clang.h \
   include/linux/init.h include/linux/compiler.h \
@@ -177,51 +177,47 @@ drivers/misc/mediatek/base/power/spm/mt6768/.tmp_mtk_spm_irq.o: \
   include/asm-generic/error-injection.h include/linux/tracepoint-defs.h \
   include/linux/static_key.h include/linux/cfi.h \
   arch/arm64/include/asm/module.h include/asm-generic/module.h \
-  include/linux/cpu_pm.h include/linux/interrupt.h \
-  include/linux/irqreturn.h include/linux/irqnr.h \
-  include/uapi/linux/irqnr.h include/linux/hardirq.h \
-  include/linux/ftrace_irq.h include/linux/vtime.h \
-  include/linux/context_tracking_state.h \
-  arch/arm64/include/asm/hardirq.h arch/arm64/include/asm/irq.h \
-  include/asm-generic/irq.h arch/arm64/include/asm/kvm_arm.h \
-  arch/arm64/include/asm/esr.h include/linux/irq_cpustat.h \
-  drivers/misc/mediatek/include/mt-plat/mtk_sched_mon.h \
-  include/linux/uaccess.h arch/arm64/include/asm/uaccess.h \
-  arch/arm64/include/asm/kernel-pgtable.h \
-  arch/arm64/include/asm/pgtable.h arch/arm64/include/asm/proc-fns.h \
-  arch/arm64/include/asm/pgtable-prot.h arch/arm64/include/asm/fixmap.h \
-  arch/arm64/include/asm/boot.h include/asm-generic/fixmap.h \
-  include/linux/mm_types.h include/linux/auxvec.h \
-  include/uapi/linux/auxvec.h arch/arm64/include/uapi/asm/auxvec.h \
-  include/linux/uprobes.h arch/arm64/include/asm/uprobes.h \
-  arch/arm64/include/asm/debug-monitors.h \
-  arch/arm64/include/asm/probes.h arch/arm64/include/asm/mmu.h \
-  include/asm-generic/pgtable.h arch/arm64/include/asm/extable.h \
-  include/linux/sched/clock.h \
-  drivers/misc/mediatek/include/mt-plat/aee.h include/linux/ratelimit.h \
-  drivers/misc/mediatek/include/mt-plat/mboot_params.h \
-  include/linux/console.h include/linux/pstore.h \
-  include/linux/kmsg_dump.h include/linux/semaphore.h \
   include/linux/delay.h arch/arm64/include/generated/asm/delay.h \
   include/asm-generic/delay.h include/linux/of.h \
   include/linux/mod_devicetable.h include/linux/uuid.h \
   include/uapi/linux/uuid.h include/linux/property.h \
   include/linux/fwnode.h include/linux/of_irq.h include/linux/irq.h \
-  include/linux/irqhandler.h include/linux/io.h \
-  arch/arm64/include/asm/io.h \
+  include/linux/irqhandler.h include/linux/irqreturn.h \
+  include/linux/irqnr.h include/uapi/linux/irqnr.h include/linux/io.h \
+  arch/arm64/include/asm/io.h arch/arm64/include/asm/pgtable.h \
+  arch/arm64/include/asm/proc-fns.h \
+  arch/arm64/include/asm/pgtable-prot.h arch/arm64/include/asm/fixmap.h \
+  arch/arm64/include/asm/boot.h include/asm-generic/fixmap.h \
+  include/linux/mm_types.h include/linux/auxvec.h \
+  include/uapi/linux/auxvec.h arch/arm64/include/uapi/asm/auxvec.h \
+  include/linux/uprobes.h arch/arm64/include/asm/uprobes.h \
+  arch/arm64/include/asm/debug-monitors.h arch/arm64/include/asm/esr.h \
+  arch/arm64/include/asm/probes.h arch/arm64/include/asm/mmu.h \
+  include/asm-generic/pgtable.h \
   arch/arm64/include/generated/asm/early_ioremap.h \
   include/asm-generic/early_ioremap.h include/xen/xen.h \
   include/asm-generic/io.h include/asm-generic/pci_iomap.h \
   include/linux/logic_pio.h include/linux/vmalloc.h \
   include/linux/overflow.h include/linux/slab.h include/linux/kasan.h \
+  arch/arm64/include/asm/irq.h include/asm-generic/irq.h \
   arch/arm64/include/generated/asm/irq_regs.h \
   include/asm-generic/irq_regs.h include/linux/irqdesc.h \
   arch/arm64/include/generated/asm/hw_irq.h include/asm-generic/hw_irq.h \
   include/linux/irqdomain.h include/linux/ioport.h \
-  include/linux/of_address.h \
-  drivers/misc/mediatek/base/power/include/mtk_spm.h \
-  drivers/misc/mediatek/base/power/include/spm_v1/mtk_spm.h \
-  drivers/misc/mediatek/base/power/spm/mt6768/mtk_spm_irq.h \
+  include/linux/of_address.h include/linux/interrupt.h \
+  include/linux/hardirq.h include/linux/ftrace_irq.h \
+  include/linux/vtime.h include/linux/context_tracking_state.h \
+  arch/arm64/include/asm/hardirq.h arch/arm64/include/asm/kvm_arm.h \
+  include/linux/irq_cpustat.h \
+  drivers/misc/mediatek/include/mt-plat/mtk_sched_mon.h \
+  include/linux/uaccess.h arch/arm64/include/asm/uaccess.h \
+  arch/arm64/include/asm/kernel-pgtable.h \
+  arch/arm64/include/asm/extable.h include/linux/sched/clock.h \
+  drivers/misc/mediatek/include/mt-plat/aee.h include/linux/ratelimit.h \
+  drivers/misc/mediatek/include/mt-plat/mboot_params.h \
+  include/linux/console.h include/linux/pstore.h \
+  include/linux/kmsg_dump.h include/linux/semaphore.h \
+  include/linux/wakeup_reason.h arch/arm64/include/uapi/asm/setup.h \
   drivers/misc/mediatek/base/power/spm/mt6768/mtk_spm_internal.h \
   drivers/misc/mediatek/include/mt-plat/sync_write.h \
   arch/arm64/include/asm/cacheflush.h include/linux/kgdb.h \
@@ -265,8 +261,40 @@ drivers/misc/mediatek/base/power/spm/mt6768/.tmp_mtk_spm_irq.o: \
   include/linux/arm-smccc.h \
   drivers/misc/mediatek/base/power/include/mtk_spm_reg.h \
   drivers/misc/mediatek/base/power/spm/mt6768/pwr_ctrl.h \
+  drivers/misc/mediatek/base/power/include/mtk_spm.h \
+  drivers/misc/mediatek/base/power/include/spm_v1/mtk_spm.h \
   drivers/misc/mediatek/base/power/include/cpuidle_v3/mtk_cpuidle.h \
   drivers/misc/mediatek/include/mt-plat/mtk_secure_api.h \
-  drivers/misc/mediatek/include/mt-plat/mtk_cirq.h \
-  include/linux/irqchip/mtk-gic-extend.h \
-  drivers/misc/mediatek/base/power/spm/mt6768/mtk_spm_irq_edge.h
+  drivers/misc/mediatek/include/mt-plat/upmu_common.h \
+  drivers/misc/mediatek/include/mt-plat/mt6768/include/mach/upmu_sw.h \
+  drivers/misc/mediatek/include/mt-plat/mt6768/include/mach/upmu_hw.h \
+  drivers/misc/mediatek/base/power/spm/mt6768/mtk_spm_irq.h \
+  drivers/misc/mediatek/base/power/spm/mt6768/mtk_spm_suspend_internal.h \
+  drivers/misc/mediatek/base/power/spm/common_v1/mtk_spm_resource_req_internal.h \
+  drivers/misc/mediatek/base/power/include/mtk_spm_resource_req.h \
+  drivers/misc/mediatek/base/power/include/spm_v1/mtk_spm_resource_req.h \
+  drivers/misc/mediatek/include/mt-plat/mtk_ccci_common.h \
+  include/linux/device.h include/linux/klist.h include/linux/pm.h \
+  arch/arm64/include/asm/device.h include/linux/pm_wakeup.h \
+  include/linux/skbuff.h include/linux/socket.h \
+  arch/arm64/include/generated/uapi/asm/socket.h \
+  include/uapi/asm-generic/socket.h \
+  arch/arm64/include/generated/uapi/asm/sockios.h \
+  include/uapi/asm-generic/sockios.h include/uapi/linux/sockios.h \
+  include/linux/uio.h include/uapi/linux/uio.h \
+  include/uapi/linux/socket.h include/linux/net.h include/linux/random.h \
+  include/linux/once.h include/uapi/linux/random.h \
+  include/linux/prandom.h include/uapi/linux/net.h \
+  include/linux/textsearch.h include/net/checksum.h \
+  arch/arm64/include/asm/checksum.h include/asm-generic/checksum.h \
+  include/linux/dma-mapping.h include/linux/dma-debug.h \
+  include/linux/dma-direction.h include/linux/scatterlist.h \
+  include/linux/mem_encrypt.h arch/arm64/include/asm/dma-mapping.h \
+  arch/arm64/include/asm/xen/hypervisor.h include/xen/arm/hypervisor.h \
+  include/linux/netdev_features.h include/net/flow_dissector.h \
+  include/linux/in6.h include/uapi/linux/in6.h \
+  include/uapi/linux/libc-compat.h include/linux/siphash.h \
+  include/uapi/linux/if_ether.h include/linux/splice.h \
+  include/linux/pipe_fs_i.h include/uapi/linux/if_packet.h \
+  include/net/flow.h \
+  drivers/misc/mediatek/base/power/spm/common_v1/mtk_sleep_internal.h

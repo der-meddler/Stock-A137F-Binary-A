@@ -7,8 +7,41 @@
 #include <linux/module.h>
 #include <linux/random.h>
 #include <asm/setup.h>
-#include <mtk_spm_internal.h>
+#include "mtk_spm_internal.h"
 #include <mtk_power_gs_api.h>
+
+/* Master Translation Block for mt6768 Internal Power Management - EXPANDED */
+#define spm_read mtk_spm_read_register
+
+// Renames and Nicknames
+#define SPM_IRQ_STA        SPM_PWRSTA
+#define SPM_PASR_DPD_0     SPM_POST_DPIDLE
+#define SPM_SRC_REQ        (0x0114) // Nickname for SRC_REQ_STA
+
+// Missing Register Offsets (Direct Hardware Mapping)
+#define PCM_REG_DATA_INI     (0x0138)
+#define PCM_REG12_EXT_DATA   (0x0130)
+#define PCM_REG13_DATA       (0x0134)
+#define SPM_WAKEUP_STA       (0x0188)
+#define SPM_WAKEUP_EXT_STA   (0x018C)
+#define SPM_BSI_D0_SR        (0x0194)
+#define SPM_BSI_D1_SR        (0x0198)
+#define SPM_BSI_D2_SR        (0x019C)
+#define SUBSYS_IDLE_STA      (0x0110)
+#define SRC_REQ_STA          (0x0114)
+#define SPM_SW_DEBUG         (0x0150)
+#define WDT_LATCH_SPARE0_FIX (0x0154)
+#define SPM_SW_FLAG          (0x0158) // Added
+
+// Wake Source Bit-flags
+#define WAKE_SRC_R12_PCM_TIMER (1 << 22)
+
+#ifndef SPM_SW_RSV_0
+#define SPM_SW_RSV_0 (0x0640)
+#endif
+#ifndef SPM_SW_RSV_2
+#define SPM_SW_RSV_2 (0x0648) // Added
+#endif
 
 #define WORLD_CLK_CNTCV_L        (0x10017008)
 #define WORLD_CLK_CNTCV_H        (0x1001700C)

@@ -16,8 +16,8 @@
 #include <linux/of_address.h>
 
 #include <mtk_spm.h>
-#include <mtk_spm_irq.h>
-#include <mtk_spm_internal.h>
+#include "mtk_spm_irq.h"
+#include "mtk_spm_internal.h"
 
 #if defined(CONFIG_MTK_SYS_CIRQ)
 #include <mt-plat/mtk_cirq.h>
@@ -25,6 +25,44 @@
 #if defined(CONFIG_MTK_GIC_V3_EXT)
 #include <linux/irqchip/mtk-gic-extend.h>
 #endif /* CONFIG_MTK_GIC_V3_EXT */
+
+/* Fix for IRQ naming, missing constants, and the 'list' array */
+#define spm_read mtk_spm_read_register
+
+// 1. Define the complete blueprint
+struct edge_trigger_irq_list {
+    char *name;
+    int order;
+    int wakesrc;
+};
+
+// 2. Hardware bit-offsets for MT6768
+#define WAKE_SRC_R12_KP_IRQ_B       (11)
+#define WAKE_SRC_R12_MD1_WDT_B      (23)
+#define WAKE_SRC_R12_SYS_CIRQ_IRQ_B (24)
+
+// 3. Manually define the 'list' array (transplanted from the broken header)
+static struct edge_trigger_irq_list list[] = {
+    { "mediatek,kp", 0, WAKE_SRC_R12_KP_IRQ_B },
+    { "mediatek,mddriver", 3, WAKE_SRC_R12_MD1_WDT_B },
+    { "mediatek,disp_rdma0", 0, WAKE_SRC_R12_SYS_CIRQ_IRQ_B },
+};
+
+// 4. Translation and Register Offsets
+#define SPM_IRQ_STA          SPM_PWRSTA
+#define SPM_TWAM_IDLE_SEL    (0x02E0)
+
+#ifndef SPM_TWAM_CON
+#define SPM_TWAM_CON         (0x02CC)
+#define SPM_TWAM_LAST_STA0   (0x02D0)
+#define SPM_TWAM_LAST_STA1   (0x02D4)
+#define SPM_TWAM_LAST_STA2   (0x02D8)
+#define SPM_TWAM_LAST_STA3   (0x02DC)
+#endif
+
+#ifndef SPM_SW_RSV_0
+#define SPM_SW_RSV_0         (0x0640)
+#endif
 
 char __attribute__((weak)) *spm_vcorefs_dump_dvfs_regs(char *p)
 {
@@ -61,7 +99,7 @@ void __attribute__((weak)) set_wakeup_sources(u32 *list, u32 num_events)
  ***************************************************/
 
 /* edge_trigger_irq_list is defined in header file 'mtk_spm_irq_edge.h' */
-#include <mtk_spm_irq_edge.h>
+// #include "mtk_spm_irq_edge.h"
 
 #define IRQ_NUMBER (sizeof(list)/sizeof(struct edge_trigger_irq_list))
 static u32 edge_trig_irqs[IRQ_NUMBER];
