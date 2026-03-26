@@ -1,0 +1,1 @@
+../../misc/mediatek/freqhopping/mtk_freqhopping.h

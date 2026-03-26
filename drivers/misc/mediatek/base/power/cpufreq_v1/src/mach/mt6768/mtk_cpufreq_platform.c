@@ -9,9 +9,18 @@
 
 #ifdef CONFIG_MTK_FREQ_HOPPING
 #include "mtk_freqhopping_drv.h"
-#else
+#endif
+
+/* These are now 'Universal'—visible to the whole file */
+#ifndef FH_PLL0
 #define FH_PLL0 0
+#endif
+
+#ifndef FH_PLL7
 #define FH_PLL7 7
+#endif
+
+#ifndef FH_PLL8
 #define FH_PLL8 8
 #endif
 

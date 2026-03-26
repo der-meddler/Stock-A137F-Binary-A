@@ -1,0 +1,20 @@
+!<thin>
+//                                              202       `
+mt6768/external_display.o/
+mt6768/mtk_extd_mgr.o/
+mt6768/extd_debug.o/
+mt6768/extd_utils.o/
+mt6768/extd_hdmi.o/
+mt6768/extd_epd.o/
+mt6768/extd_lcm.o/
+mt6768/extd_multi_control.o/
+mt6768/extd_factory.o/
+/0              0           0     0     644     720280    `
+/27             0           0     0     644     246792    `
+/50             0           0     0     644     1224      `
+/71             0           0     0     644     18144     `
+/92             0           0     0     644     4776      `
+/112            0           0     0     644     4768      `
+/131            0           0     0     644     4768      `
+/150            0           0     0     644     241120    `
+/179            0           0     0     644     5384      `

@@ -1,0 +1,13 @@
+!<thin>
+//                                              88        `
+upmu.o/
+upmu_regulator.o/
+upmu_debugfs.o/
+upmu_initial_setting.o/
+upmu_lbat_service.o/
+
+/0              0           0     0     644     573592    `
+/8              0           0     0     644     253728    `
+/26             0           0     0     644     192544    `
+/42             0           0     0     644     309816    `
+/66             0           0     0     644     479296    `

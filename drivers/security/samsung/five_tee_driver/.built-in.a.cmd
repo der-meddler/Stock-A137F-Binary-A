@@ -1,0 +1,1 @@
+cmd_drivers/security/samsung/five_tee_driver/built-in.a :=  rm -f drivers/security/samsung/five_tee_driver/built-in.a; aarch64-none-linux-gnu-ar rcSTPD drivers/security/samsung/five_tee_driver/built-in.a 

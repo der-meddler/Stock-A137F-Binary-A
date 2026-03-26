@@ -1,0 +1,36 @@
+!<thin>
+//                                              430       `
+common/upmu.o/
+common/upmu_regulator.o/
+common/upmu_debugfs.o/
+common/upmu_initial_setting.o/
+common/upmu_lbat_service.o/
+mt6358/v1/pmic_ipi.o/
+mt6358/v1/pmic.o/
+mt6358/v1/pmic_common.o/
+mt6358/v1/pmic_debugfs.o/
+mt6358/v1/pmic_irq.o/
+mt6358/v1/pmic_initial_setting.o/
+mt6358/v1/pmic_api.o/
+mt6358/v1/pmic_auxadc.o/
+mt6358/v1/regulator_codegen.o/
+mt6358/v1/pmic_lp_api.o/
+mt6358/v1/pmic_efuse.o/
+mt6358/v1/pmic_throttling_dlpt.o/
+/0              0           0     0     644     573592    `
+/15             0           0     0     644     253728    `
+/40             0           0     0     644     192544    `
+/63             0           0     0     644     309816    `
+/94             0           0     0     644     479296    `
+/122            0           0     0     644     12816     `
+/144            0           0     0     644     518312    `
+/162            0           0     0     644     372808    `
+/187            0           0     0     644     487608    `
+/213            0           0     0     644     517576    `
+/235            0           0     0     644     495576    `
+/269            0           0     0     644     3613480   `
+/291            0           0     0     644     539760    `
+/316            0           0     0     644     863104    `
+/347            0           0     0     644     38056     `
+/372            0           0     0     644     312160    `
+/396            0           0     0     644     497024    `

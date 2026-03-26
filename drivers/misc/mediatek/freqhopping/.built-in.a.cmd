@@ -1,0 +1,1 @@
+cmd_drivers/misc/mediatek/freqhopping/built-in.a :=  rm -f drivers/misc/mediatek/freqhopping/built-in.a; aarch64-none-linux-gnu-ar rcSTPD drivers/misc/mediatek/freqhopping/built-in.a drivers/misc/mediatek/freqhopping/mtk_freqhopping_drv.o drivers/misc/mediatek/freqhopping/mt6768/built-in.a

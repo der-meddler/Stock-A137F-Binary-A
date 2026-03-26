@@ -18,7 +18,7 @@
 
 #include <mt-plat/sync_write.h>
 #include <emi_io.h>
-#include <mt_emi.h>
+#include "../mt6768/mt_emi.h"
 #if DBG_INFO_READY
 #include <plat_dbg_info.h>
 #endif

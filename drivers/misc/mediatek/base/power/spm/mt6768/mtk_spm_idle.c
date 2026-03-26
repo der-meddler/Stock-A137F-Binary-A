@@ -13,16 +13,16 @@
 
 #include <trace/events/mtk_idle_event.h>
 
-#include <mtk_idle.h>
-#include <mtk_idle_internal.h>
-#include <mtk_spm_suspend_internal.h>
+#include "mtk_idle.h"
+#include "mtk_idle_internal.h"
+#include "mtk_spm_suspend_internal.h"
 #include <mtk_spm_resource_req.h>
 
 
 #include "pwr_ctrl.h"
 
-#include <mtk_idle_module.h>
-#include <mtk_idle_module_plat.h>
+#include "mtk_idle_module.h"
+#include "mtk_idle_module_plat.h"
 
 #define MTK_IDLE_GS_DUMP_READY	(1)
 
@@ -30,6 +30,28 @@
 /* NOTE: Check golden setting dump header file for each project */
 #include "power_gs_v1/mtk_power_gs_internal.h"
 #endif
+
+/* Fix for Idle naming and SODI feature flags */
+#define spm_read mtk_spm_read_register
+
+#define SPM_FLAG_DIS_VCORE_DVS             (1U << 0)
+#define SPM_FLAG_DIS_VCORE_DFS             (1U << 1)
+#define SPM_FLAG_DIS_ATF_ABORT             (1U << 2)
+#define SPM_FLAG_SUSPEND_OPTION            (1U << 3)
+#define SPM_FLAG_DIS_INFRA_PDN             (1U << 4)
+#define SPM_FLAG_KEEP_CSYSPWRUPACK_HIGH    (1U << 5)
+#define SPM_FLAG_DEEPIDLE_OPTION           (1U << 6)
+#define SPM_FLAG_SODI_OPTION               (1U << 7)
+#define SPM_FLAG_DIS_SSPM_SRAM_SLEEP       (1U << 8)
+
+// Fix for line 179: CPU Power Down logic
+#define SPM_FLAG1_ENABLE_CPU_SLEEP_VOLT    (1U << 7)
+#ifndef is_cpu_pdn
+#define is_cpu_pdn(flags) (!!((flags) & SPM_FLAG1_ENABLE_CPU_SLEEP_VOLT))
+#endif
+
+// Mapped based on compiler hint for SODI states
+#define SPM_FLAG_ENABLE_SODI3              SPM_LEAVE_SODI3
 
 /* FIXME: IT with vcorefs ? */
 void __attribute__((weak)) dvfsrc_md_scenario_update(bool suspend) {}

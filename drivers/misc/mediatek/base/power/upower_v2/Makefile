@@ -1,4 +1,3 @@
-
 # Copyright (C) 2017 MediaTek Inc.
 #
 # This program is free software: you can redistribute it and/or modify
@@ -28,9 +27,9 @@ ccflags-y += \
 	-I$(srctree)/drivers/misc/mediatek/base/power/eem_v2/$(platform)/inc	\
 	-I$(srctree)/drivers/misc/mediatek/include/mt-plat/$(platform)/include/mach	\
 
-ifeq ($(CONFIG_MTK_TINYSYS_SSPM_SUPPORT), y)
+ifeq ($(CONFIG_MTK_TINYSYS_SSPM_SUPPORT),y)
 #for mt6768
-ifeq ($(CONFIG_MACH_MT6768),y))
+ifeq ($(CONFIG_MACH_MT6768),y)
 ccflags-y += -I$(srctree)/drivers/misc/mediatek/sspm/v1/
 else
 ccflags-y += -I$(srctree)/drivers/misc/mediatek/sspm/

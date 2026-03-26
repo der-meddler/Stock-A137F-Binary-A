@@ -1,3 +1,4 @@
+ccflags-y += -I$(srctree)/drivers/soc/mediatek/
 obj-$(CONFIG_MTK_PMQOS) += mtk-pm-qos.o
 obj-$(CONFIG_MTK_CMDQ) += mtk-cmdq-helper.o
 

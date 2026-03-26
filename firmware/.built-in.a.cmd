@@ -1,0 +1,1 @@
+cmd_firmware/built-in.a :=  rm -f firmware/built-in.a; aarch64-none-linux-gnu-ar rcSTPD firmware/built-in.a firmware/melfas/melfas_mip4_ts.fw.gen.o firmware/tsp_novatek/nt36672_a13ve_csot.bin.gen.o firmware/tsp_novatek/nt36672_a13ve_csot_mp.bin.gen.o firmware/tsp_himax/hx83112f_boe_a13ve.bin.gen.o

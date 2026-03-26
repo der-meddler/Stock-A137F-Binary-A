@@ -11,8 +11,26 @@
 #include <linux/of_device.h>
 #include <asm/setup.h>
 
-#include <mtk_spm_internal.h>
-#include <mtk_spm_suspend_internal.h>
+#include "mtk_spm_internal.h"
+#include "mtk_spm_suspend_internal.h"
+
+/* Fix for Modem/Conn status bits and missing constants */
+#define spm_read mtk_spm_read_register
+
+#ifndef PCM_REG13_DATA
+#define PCM_REG13_DATA            (0x0134)
+#endif
+
+/* Hardware Bit-masks for MD/CONN resource requests */
+#define R13_MD1_SRCCLKENA         (1 << 0)
+#define R13_MD2_SRCCLKENA         (1 << 1)
+#define R13_CONN_SRCCLKENA        (1 << 2)
+#define R13_MD1_APSRC_REQ         (1 << 3)
+#define R13_MD2_APSRC_REQ         (1 << 4)
+
+/* AP to MD Source Request Handshaking (Line 79 fix) */
+#define AP_MDSRC_REQ              (0x011C)
+#define AP_MDSMSRC_ACK_LSB        (1 << 0)
 
 static int local_spm_load_firmware_status = 1;
 int spm_load_firmware_status(void)

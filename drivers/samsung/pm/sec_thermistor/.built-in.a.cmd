@@ -1,0 +1,1 @@
+cmd_drivers/samsung/pm/sec_thermistor/built-in.a :=  rm -f drivers/samsung/pm/sec_thermistor/built-in.a; aarch64-none-linux-gnu-ar rcSTPD drivers/samsung/pm/sec_thermistor/built-in.a drivers/samsung/pm/sec_thermistor/sec_thermistor.o

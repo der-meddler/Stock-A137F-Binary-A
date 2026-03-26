@@ -1,0 +1,20 @@
+!<thin>
+//                                              262       `
+../smcdsd_panel_init.o/
+../smcdsd_panel.o/
+../../../../../gpu/drm/panel/smcdsd_panel/smcdsd_regmap.o/
+../../../../../gpu/drm/panel/smcdsd_panel/smcdsd_supply.o/
+../smcdsd_board.o/
+../smcdsd_notify.o/
+../smcdsd_abd.o/
+a13ve_nt36672c_csot.o/
+a13ve_hx83112f_boe.o/
+/0              0           0     0     644     225400    `
+/24             0           0     0     644     231072    `
+/43             0           0     0     644     133624    `
+/102            0           0     0     644     287152    `
+/161            0           0     0     644     371104    `
+/180            0           0     0     644     215264    `
+/200            0           0     0     644     400368    `
+/217            0           0     0     644     359120    `
+/240            0           0     0     644     306288    `

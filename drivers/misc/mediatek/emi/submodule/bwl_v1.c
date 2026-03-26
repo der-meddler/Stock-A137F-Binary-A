@@ -13,8 +13,8 @@
 #include <mt-plat/sync_write.h>
 
 #include <emi_io.h>
-#include <mt_emi.h>
-#include <bwl_platform.h>
+#include "../mt6768/mt_emi.h"
+#include "../mt6768/bwl_platform.h"
 #include "bwl_v1.h"
 #if DBG_INFO_READY
 #include <plat_dbg_info.h>
@@ -40,7 +40,7 @@ static struct scn_reg_t cen_reg[BWL_ENV_MAX][BWL_SCN_MAX][BWL_CEN_MAX] = {
 	[ENV][SCN][BWL_CEN_##OFFSET].offset = OFFSET, \
 	[ENV][SCN][BWL_CEN_##OFFSET].value = VAL,
 #define SET_BWL_CHN_REG(ENV, SCN, OFFSET, VAL)
-#include <bwl_scenario.h>
+#include "../mt6768/bwl_scenario.h"
 #undef SET_BWL_CEN_REG
 #undef SET_BWL_CHN_REG
 };
@@ -50,7 +50,7 @@ static struct scn_reg_t chn_reg[BWL_ENV_MAX][BWL_SCN_MAX][BWL_CHN_MAX] = {
 #define SET_BWL_CHN_REG(ENV, SCN, OFFSET, VAL) \
 	[ENV][SCN][BWL_CHN_##OFFSET].offset = OFFSET, \
 	[ENV][SCN][BWL_CHN_##OFFSET].value = VAL,
-#include <bwl_scenario.h>
+#include "../mt6768/bwl_scenario.h"
 #undef SET_BWL_CEN_REG
 #undef SET_BWL_CHN_REG
 };
@@ -62,7 +62,7 @@ static struct scn_name_t scn_name[BWL_SCN_MAX] = {
 #define SET_BWL_CEN_REG(ENV, SCN, OFFSET, VAL) \
 	[SCN].name = #SCN,
 #define SET_BWL_CHN_REG(ENV, SCN, OFFSET, VAL)
-#include <bwl_scenario.h>
+#include "../mt6768/bwl_scenario.h"
 #undef SET_BWL_CEN_REG
 #undef SET_BWL_CHN_REG
 };

@@ -1,3 +1,4 @@
+ccflags-y += -I$(srctree)/drivers/misc/mediatek/mmdvfs/
 #
 # Copyright (C) 2015 MediaTek Inc.
 #

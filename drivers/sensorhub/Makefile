@@ -1,3 +1,5 @@
+ccflags-y += -I$(srctree)/drivers/misc/mediatek/scp/include/
+
 shub-y += comm/shub_comm.o
 shub-y += comm/shub_iio.o
 shub-y += comm/shub_kfifo_buf.o

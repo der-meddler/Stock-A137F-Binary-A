@@ -1,0 +1,1 @@
+cmd_drivers/misc/mediatek/c2k_usb/built-in.a :=  rm -f drivers/misc/mediatek/c2k_usb/built-in.a; aarch64-none-linux-gnu-ar rcSTPD drivers/misc/mediatek/c2k_usb/built-in.a drivers/misc/mediatek/c2k_usb/f_rawbulk.o drivers/misc/mediatek/c2k_usb/rawbulk.o drivers/misc/mediatek/c2k_usb/rawbulk_transfer.o

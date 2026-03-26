@@ -6,15 +6,18 @@
 #include <linux/kernel.h>
 #include <linux/module.h>
 
-#include <mtk_idle.h>
-#include <mtk_idle_internal.h>
-#include <mtk_spm_internal.h> /* mtk_idle_cond_check */
+#include "../mtk_idle.h"
+#include "mtk_idle_internal.h"
+#include "../mtk_spm_internal.h" /* mtk_idle_cond_check */
 
-#include <mtk_idle_fs/mtk_idle_sysfs.h>
-#include <mtk_idle_module.h>
-#include <mtk_idle_module_plat.h>
+#include "mtk_idle_fs/mtk_idle_sysfs.h"
+#include "mtk_idle_module.h"
+#include "../mtk_idle_module_plat.h"
 
-#include "mtk_spm_resource_req.h"
+#include "../mtk_spm_resource_req.h"
+
+/* Fix for DRAM model register access */
+#define spm_read mtk_spm_read_register
 
 static bool idle_dram_feature_enable = MTK_IDLE_FEATURE_ENABLE_IDLEDRAM;
 static bool idle_dram_bypass_idle_cond;

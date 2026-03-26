@@ -760,11 +760,11 @@ deps_drivers/misc/mediatek/base/power/cpufreq_v1/src/mach/mt6768/mtk_cpufreq_pla
   include/linux/projid.h \
   include/uapi/linux/quota.h \
   include/linux/nfs_fs_i.h \
-  drivers/misc/mediatek/freqhopping/mt6768/mtk_freqhopping.h \
-    $(wildcard include/config/mach/mt6768.h) \
+  drivers/misc/mediatek/freqhopping/mtk_freqhopping.h \
   drivers/misc/mediatek/include/mt-plat/upmu_common.h \
     $(wildcard include/config/mach/mt8173.h) \
     $(wildcard include/config/mach/mt6739.h) \
+    $(wildcard include/config/mach/mt6768.h) \
     $(wildcard include/config/mach/mt6771.h) \
     $(wildcard include/config/mach/mt6781.h) \
     $(wildcard include/config/mach/mt6785.h) \

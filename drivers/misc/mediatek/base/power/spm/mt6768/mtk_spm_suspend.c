@@ -38,10 +38,10 @@
 #ifdef CONFIG_MTK_ICCS_SUPPORT
 #include <mtk_hps_internal.h>
 #endif
-#include <mtk_sleep_internal.h>
-#include <mtk_idle_module.h
+#include "mtk_sleep_internal.h"
+#include "mtk_idle_module.h"
 
-/* Master Suspend Translation Block - Clean Version */
+/* Master Suspend Translation Block */
 #define spm_read mtk_spm_read_register
 
 // 1. Hardware Wake Source Bit-Offsets
@@ -66,12 +66,9 @@
 #define SPM_POWER_ON_VAL1                  (0x0614)
 
 // 3. Logic Helper Macros
-#ifndef is_infra_pdn
 #define is_infra_pdn(flags) (!!((flags) & SPM_FLAG_DIS_INFRA_PDN))
-#endif
-#ifndef is_cpu_pdn
 #define is_cpu_pdn(flags)   (!!((flags) & SPM_FLAG1_ENABLE_CPU_SLEEP_VOLT))
-#endif
+
 
 static int spm_dormant_sta;
 int spm_ap_mdsrc_req_cnt;

@@ -18,7 +18,7 @@
 
 
 
-#include <mtk_idle_module_plat.h>
+#include "mtk_idle_module_plat.h"
 /***********************************************************
  * Local definitions
  ***********************************************************/

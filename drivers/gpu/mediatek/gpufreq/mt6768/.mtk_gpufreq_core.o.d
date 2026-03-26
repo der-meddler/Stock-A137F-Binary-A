@@ -244,7 +244,7 @@ mtk_gpufreq_core.o: \
   drivers/misc/mediatek/include/mt-plat/mtk_pmic_wrap.h \
   drivers/misc/mediatek/include/mt-plat/mtk_devinfo.h \
   drivers/misc/mediatek/freqhopping/mtk_freqhopping_drv.h \
-  drivers/misc/mediatek/freqhopping/mt6768/mtk_freqhopping.h \
+  drivers/misc/mediatek/freqhopping/mtk_freqhopping.h \
   drivers/misc/mediatek/include/mt-plat/upmu_common.h \
   drivers/misc/mediatek/include/mt-plat/mt6768/include/mach/upmu_sw.h \
   drivers/misc/mediatek/include/mt-plat/mt6768/include/mach/upmu_hw.h \

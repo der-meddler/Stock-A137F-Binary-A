@@ -7,10 +7,72 @@
 #include <linux/kernel.h>
 #include <linux/string.h>
 
-#include <mtk_spm_internal.h>
+#include "mtk_spm_internal.h"
 #include <mtk_spm_reg.h>
-#include <mtk_sleep_reg_md_reg.h>
-#include <sleep_def.h>
+#include "mtk_sleep_reg_md_reg.h"
+#include "sleep_def.h"
+
+/* Final Master VCore DVFS Translation Block - Fixes Pointer and IM Regs */
+#ifdef spm_read
+#undef spm_read
+#endif
+#define spm_read mtk_spm_read_register
+
+// PCM Data and Instruction Memory (IM) Registers
+#define PCM_REG0_DATA          (0x0100)
+#define PCM_REG1_DATA          (0x0104)
+#define PCM_REG2_DATA          (0x0108)
+#define PCM_REG3_DATA          (0x010C)
+#define PCM_REG4_DATA          (0x0110)
+#define PCM_REG5_DATA          (0x0114)
+#define PCM_REG6_DATA          (0x0118)
+#define PCM_REG7_DATA          (0x011C)
+#define PCM_REG8_DATA          (0x0120)
+#define PCM_REG9_DATA          (0x0124)
+#define PCM_REG10_DATA         (0x0128)
+#define PCM_REG11_DATA         (0x012C)
+#define PCM_REG12_DATA         (0x0130)
+#define PCM_REG13_DATA         (0x0134)
+#define PCM_REG14_DATA         (0x0138)
+#define PCM_REG15_DATA         (0x013C)
+#define PCM_IM_PTR             (0x0140)
+#define PCM_IM_LEN             (0x0144)
+
+// DVFS Command and Status Registers
+#define SPM_DVFS_CMD0          (0x01A0)
+#define SPM_DVFS_CMD1          (0x01A4)
+#define SPM_DVFS_CMD2          (0x01A8)
+#define SPM_DVFS_CMD3          (0x01AC)
+#define SPM_DVFS_CMD4          (0x01B0) // Added for line 172
+#define SPM_DVFS_CON1_STA      (0x01B4)
+#define SPM_ACK_CHK_TIMER2     (0x0148)
+
+// Fix for Modem Commands (Lines 173-178)
+// This forces the "void *" pointers to become integers the compiler can use
+#ifdef SLEEP_REG_MD_SPM_DVFS_CMD16
+#undef SLEEP_REG_MD_SPM_DVFS_CMD16
+#undef SLEEP_REG_MD_SPM_DVFS_CMD17
+#undef SLEEP_REG_MD_SPM_DVFS_CMD18 // <--- Make sure this line is here
+#undef SLEEP_REG_MD_SPM_DVFS_CMD19
+#endif
+#define SLEEP_REG_MD_SPM_DVFS_CMD16 (0x0C00)
+#define SLEEP_REG_MD_SPM_DVFS_CMD17 (0x0C04)
+#define SLEEP_REG_MD_SPM_DVFS_CMD18 (0x0C08) // <--- And this one
+#define SLEEP_REG_MD_SPM_DVFS_CMD19 (0x0C0C)
+
+// Control Registers
+#define POWERON_CONFIG_EN      (0x0000) 
+#define SPM_SW_FLAG            (0x0158)
+#define SPM_DVFS_EVENT_STA     (0x01B0)
+#define SPM_DVFS_CON1          (0x01B4)
+#define SPM_DVFS_LEVEL         (0x01B8)
+#define SPM_DFS_LEVEL          (0x01BC)
+#define SPM_DVS_LEVEL          (0x01C0)
+#define MD2SPM_DVFS_CON        (0x0250)
+
+#ifndef SPM_SW_RSV_9
+#define SPM_SW_RSV_9           (0x0664)
+#endif
 
 int spm_dvfs_flag_init(int dvfsrc_en)
 {

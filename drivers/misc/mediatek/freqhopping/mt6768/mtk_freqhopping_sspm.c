@@ -28,6 +28,17 @@
 #include <linux/of_address.h>
 //#include "mtk_dramc.h"
 
+#ifndef FH_PLL7
+#define FH_PLL7 7
+#endif
+#ifndef FH_PLL8
+#define FH_PLL8 8
+#endif
+
+/* Fix for the 'Excess Elements' error below */
+#undef FH_PLL_NUM
+#define FH_PLL_NUM 10
+
 #define MASK22b (0x3FFFFF)
 
 /***********************************/

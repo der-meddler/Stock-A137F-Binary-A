@@ -8,8 +8,8 @@
 
 #include <mt-plat/sync_write.h>
 #include "ccci_config.h"
-#include "modem_sys.h"
-#include "hif/ccci_hif_cldma.h"
+#include "../modem_sys.h"
+#include "../hif/ccci_hif_cldma.h"
 
 struct  ccci_plat_val {
 	void __iomem *infra_ao_base;
