@@ -10,9 +10,9 @@
 #ifndef _MUSB_DR_H_
 #define _MUSB_DR_H_
 
-#include <musb.h>
-#include <musb_core.h>
-#include <mtk_musb.h>
+#include "musb.h"
+#include "musb_core.h"
+#include "mtk_musb.h"
 #include <usb20.h>
 
 #if IS_ENABLED(CONFIG_USB_MTK_OTG) || IS_ENABLED(CONFIG_MTK_MUSB_DUAL_ROLE)

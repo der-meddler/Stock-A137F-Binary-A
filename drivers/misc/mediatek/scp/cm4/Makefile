@@ -1,3 +1,6 @@
+ccflags-y += -I$(srctree)/drivers/misc/mediatek/scp/cm4/
+ccflags-y += -I$(srctree)/drivers/misc/mediatek/scp/cm4/v01/
+
 SCP_VERSION := v01
 SCP_VERSION_PATH := ./$(SCP_VERSION)
 

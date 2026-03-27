@@ -1,0 +1,1 @@
+cmd_drivers/misc/mediatek/task_turbo/built-in.a :=  rm -f drivers/misc/mediatek/task_turbo/built-in.a; aarch64-none-linux-gnu-ar rcSTPD drivers/misc/mediatek/task_turbo/built-in.a drivers/misc/mediatek/task_turbo/task_turbo.o

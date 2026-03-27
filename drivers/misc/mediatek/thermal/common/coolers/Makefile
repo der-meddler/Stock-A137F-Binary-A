@@ -1,3 +1,4 @@
+ccflags-y += -I$(srctree)/drivers/misc/mediatek/thermal/common/coolers/
 #
 # Copyright (C) 2015 MediaTek Inc.
 #
