@@ -21,12 +21,12 @@
 #include <linux/err.h>
 #endif
 
-#include <musb_core.h>
+#include "musb_core.h"
 #include <musbhsdma.h>
 #ifdef CONFIG_OF
 #include <linux/of_irq.h>
 #include <linux/of_address.h>
-#include <mtk_musb.h>
+#include "mtk_musb.h"
 #endif
 
 #if IS_ENABLED(CONFIG_USB_NOTIFY_LAYER)

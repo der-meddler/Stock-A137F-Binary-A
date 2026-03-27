@@ -1,0 +1,62 @@
+!<thin>
+//                                              940       `
+mtk_thermal_monitor.o/
+mtk_cooler_shutdown.o/
+mtk_cooler_backlight.o/
+mtk_cooler_kshutdown.o/
+mtk_cooler_cam.o/
+common/mtk_thermal_platform.o/
+common/ap_thermal_limit.o/
+common/thermal_zones/mtk_ts_bts.o/
+common/thermal_zones/mtk_ts_btsmdpa.o/
+common/thermal_zones/mtk_ts_cpu_noBank.o/
+common/thermal_zones/mtk_ts_pa.o/
+common/thermal_zones/mtk_ts_pa_thput.o/
+common/thermal_zones/mtk_ts_wmt.o/
+common/thermal_zones/mtk_tsAll.o/
+common/thermal_zones/mtk_ts_imgsensor.o/
+common/thermal_zones/mtk_ts_dctm.o/
+common/thermal_zones/mtk_ts_pmic.o/
+common/coolers/mtk_ta.o/
+common/coolers/mtk_cooler_mutt.o/
+common/coolers/mtk_cooler_atm.o/
+common/coolers/mtk_cooler_dtm.o/
+common/coolers/mtk_cooler_sysrst.o/
+common/coolers/mtk_cooler_VR_FPS.o/
+common/mtk_thermal_timer.o/
+mt6768/src/mtk_tc.o/
+mt6768/src/mtk_pmic_efuse.o/
+mt6768/src/mtk_ts_6358buck1.o/
+mt6768/src/mtk_ts_6358buck2.o/
+mt6768/src/mtk_ts_6358buck3.o/
+mt6768/src/mtk_thermal_ipi.o/
+/0              0           0     0     644     367008    `
+/23             0           0     0     644     184880    `
+/46             0           0     0     644     61848     `
+/70             0           0     0     644     62624     `
+/94             0           0     0     644     210176    `
+/112            0           0     0     644     219840    `
+/143            0           0     0     644     29720     `
+/170            0           0     0     644     269600    `
+/205            0           0     0     644     265720    `
+/244            0           0     0     644     330704    `
+/286            0           0     0     644     343376    `
+/320            0           0     0     644     260352    `
+/360            0           0     0     644     464056    `
+/395            0           0     0     644     494304    `
+/429            0           0     0     644     553816    `
+/470            0           0     0     644     324232    `
+/506            0           0     0     644     229128    `
+/542            0           0     0     644     361976    `
+/567            0           0     0     644     297920    `
+/601            0           0     0     644     451800    `
+/634            0           0     0     644     174528    `
+/667            0           0     0     644     160776    `
+/703            0           0     0     644     161872    `
+/739            0           0     0     644     19608     `
+/767            0           0     0     644     271312    `
+/788            0           0     0     644     339088    `
+/817            0           0     0     644     205576    `
+/848            0           0     0     644     205576    `
+/879            0           0     0     644     205576    `
+/910            0           0     0     644     1224      `

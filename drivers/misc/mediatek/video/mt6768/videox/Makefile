@@ -1,3 +1,8 @@
+ccflags-y += -I$(srctree)/drivers/misc/mediatek/video/mt6768/dispsys/
+ccflags-y += -I$(srctree)/drivers/misc/mediatek/video/common/
+ccflags-y += -I$(srctree)/drivers/misc/mediatek/video/mt6768/videox/
+ccflags-y += -I$(srctree)/drivers/misc/mediatek/video/common/layering_rule_base/v1.1/
+ccflags-y += -I$(srctree)/drivers/misc/mediatek/video/include/
 #
 # Copyright (C) 2015 MediaTek Inc.
 #

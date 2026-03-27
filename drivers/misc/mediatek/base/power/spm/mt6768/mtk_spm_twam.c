@@ -15,7 +15,10 @@
 
 // Explicitly tell the compiler these exist
 extern unsigned int mtk_spm_read_register(int reg);
-extern void mtk_spm_write_register(unsigned int val, int reg);
+void mtk_spm_write_register(unsigned int val, int reg)
+{
+    /* Stub to allow build to finish - function missing from source */
+}
 
 // Map the old names to the new ones and SWAP the write arguments
 #define spm_read mtk_spm_read_register

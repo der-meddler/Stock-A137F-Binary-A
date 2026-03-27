@@ -1,0 +1,1 @@
+cmd_vmlinux := /bin/bash scripts/link-vmlinux.sh aarch64-none-linux-gnu-ld -EL  -maarch64elf --no-undefined -X -z norelro -shared -Bsymbolic -z notext  --no-apply-dynamic-relocs --fix-cortex-a53-843419  --build-id ;  true

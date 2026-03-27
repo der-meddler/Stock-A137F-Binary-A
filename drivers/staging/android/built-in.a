@@ -1,0 +1,45 @@
+!<thin>
+//                                              482       `
+ashmem.o/
+alarm-dev.o/
+debug_kinfo.o/
+lmkd_debug.o/
+mtk_ion/ion.o/
+mtk_ion/ion-ioctl.o/
+mtk_ion/ion_heap.o/
+mtk_ion/ion_page_pool.o/
+mtk_ion/ion_system_heap.o/
+mtk_ion/ion_carveout_heap.o/
+mtk_ion/ion_chunk_heap.o/
+mtk_ion/ion_cma_heap.o/
+mtk_ion/compat_ion.o/
+mtk_ion/mtk/ion_drv.o/
+mtk_ion/mtk/ion_mm_heap.o/
+mtk_ion/mtk/ion_fb_heap.o/
+mtk_ion/mtk/ion_sec_heap.o/
+mtk_ion/mtk/ion_profile.o/
+mtk_ion/mtk/ion_dma_reserved_heap.o/
+mtk_ion/mtk/ion_history.o/
+mtk_ion/mtk/ion_comm.o/
+
+/0              0           0     0     644     264504    `
+/10             0           0     0     644     206696    `
+/23             0           0     0     644     156816    `
+/38             0           0     0     644     130272    `
+/52             0           0     0     644     374240    `
+/67             0           0     0     644     143776    `
+/88             0           0     0     644     177408    `
+/108            0           0     0     644     209664    `
+/133            0           0     0     644     186928    `
+/160            0           0     0     644     146424    `
+/189            0           0     0     644     146208    `
+/215            0           0     0     644     153064    `
+/239            0           0     0     644     1423360   `
+/261            0           0     0     644     269144    `
+/284            0           0     0     644     316008    `
+/311            0           0     0     644     163288    `
+/338            0           0     0     644     211248    `
+/366            0           0     0     644     8768      `
+/393            0           0     0     644     160496    `
+/430            0           0     0     644     196160    `
+/457            0           0     0     644     152528    `

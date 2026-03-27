@@ -1,0 +1,1 @@
+cmd_drivers/vibrator/common/vib_info/built-in.a :=  rm -f drivers/vibrator/common/vib_info/built-in.a; aarch64-none-linux-gnu-ar rcSTPD drivers/vibrator/common/vib_info/built-in.a drivers/vibrator/common/vib_info/vibrator_vib_info.o

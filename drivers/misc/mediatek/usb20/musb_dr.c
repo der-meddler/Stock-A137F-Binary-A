@@ -10,7 +10,7 @@
 #include <linux/of_platform.h>
 
 #include <usb20.h>
-#include <musb_dr.h>
+#include "musb_dr.h"
 #include <musb_host.h>
 #include <musb_gadget.h>
 #ifdef CONFIG_DEBUG_FS
