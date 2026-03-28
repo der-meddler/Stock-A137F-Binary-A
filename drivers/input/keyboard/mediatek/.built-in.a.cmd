@@ -1,1 +1,0 @@
-cmd_drivers/input/keyboard/mediatek/built-in.a :=  rm -f drivers/input/keyboard/mediatek/built-in.a; aarch64-none-linux-gnu-ar rcSTPD drivers/input/keyboard/mediatek/built-in.a drivers/input/keyboard/mediatek/kpd.o drivers/input/keyboard/mediatek/mt6768/built-in.a

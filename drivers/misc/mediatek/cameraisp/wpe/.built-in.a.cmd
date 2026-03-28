@@ -1,1 +1,0 @@
-cmd_drivers/misc/mediatek/cameraisp/wpe/built-in.a :=  rm -f drivers/misc/mediatek/cameraisp/wpe/built-in.a; aarch64-none-linux-gnu-ar rcSTPD drivers/misc/mediatek/cameraisp/wpe/built-in.a drivers/misc/mediatek/cameraisp/wpe/camerawpe_dummy.o

@@ -1,1 +1,0 @@
-cmd_drivers/power/supply/mediatek/built-in.a :=  rm -f drivers/power/supply/mediatek/built-in.a; aarch64-none-linux-gnu-ar rcSTPD drivers/power/supply/mediatek/built-in.a drivers/power/supply/mediatek/misc/built-in.a

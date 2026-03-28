@@ -1,1 +1,0 @@
-cmd_drivers/power/supply/mediatek/misc/built-in.a :=  rm -f drivers/power/supply/mediatek/misc/built-in.a; aarch64-none-linux-gnu-ar rcSTPD drivers/power/supply/mediatek/misc/built-in.a drivers/power/supply/mediatek/misc/mtk_gauge_time_service.o

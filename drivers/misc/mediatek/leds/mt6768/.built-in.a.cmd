@@ -1,1 +1,0 @@
-cmd_drivers/misc/mediatek/leds/mt6768/built-in.a :=  rm -f drivers/misc/mediatek/leds/mt6768/built-in.a; aarch64-none-linux-gnu-ar rcSTPD drivers/misc/mediatek/leds/mt6768/built-in.a drivers/misc/mediatek/leds/mt6768/mtk_leds.o

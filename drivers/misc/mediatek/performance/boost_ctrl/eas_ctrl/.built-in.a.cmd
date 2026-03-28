@@ -1,1 +1,0 @@
-cmd_drivers/misc/mediatek/performance/boost_ctrl/eas_ctrl/built-in.a :=  rm -f drivers/misc/mediatek/performance/boost_ctrl/eas_ctrl/built-in.a; aarch64-none-linux-gnu-ar rcSTPD drivers/misc/mediatek/performance/boost_ctrl/eas_ctrl/built-in.a drivers/misc/mediatek/performance/boost_ctrl/eas_ctrl/eas_ctrl.o drivers/misc/mediatek/performance/boost_ctrl/eas_ctrl/uclamp_ctrl.o

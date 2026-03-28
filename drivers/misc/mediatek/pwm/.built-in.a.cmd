@@ -1,1 +1,0 @@
-cmd_drivers/misc/mediatek/pwm/built-in.a :=  rm -f drivers/misc/mediatek/pwm/built-in.a; aarch64-none-linux-gnu-ar rcSTPD drivers/misc/mediatek/pwm/built-in.a drivers/misc/mediatek/pwm/mt6768/built-in.a drivers/misc/mediatek/pwm/mtk_pwm.o

@@ -1,1 +1,0 @@
-cmd_drivers/misc/mediatek/base/power/ppm_v3/src/mach/built-in.a :=  rm -f drivers/misc/mediatek/base/power/ppm_v3/src/mach/built-in.a; aarch64-none-linux-gnu-ar rcSTPD drivers/misc/mediatek/base/power/ppm_v3/src/mach/built-in.a drivers/misc/mediatek/base/power/ppm_v3/src/mach/mt6768/built-in.a

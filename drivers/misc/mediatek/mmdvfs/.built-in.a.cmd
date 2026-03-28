@@ -1,1 +1,0 @@
-cmd_drivers/misc/mediatek/mmdvfs/built-in.a :=  rm -f drivers/misc/mediatek/mmdvfs/built-in.a; aarch64-none-linux-gnu-ar rcSTPD drivers/misc/mediatek/mmdvfs/built-in.a drivers/misc/mediatek/mmdvfs/swpm_me.o drivers/misc/mediatek/mmdvfs/mmdvfs_pmqos.o drivers/misc/mediatek/mmdvfs/mmdvfs_plat_default.o

@@ -1,1 +1,0 @@
-cmd_drivers/gpu/mediatek/gpufreq/built-in.a :=  rm -f drivers/gpu/mediatek/gpufreq/built-in.a; aarch64-none-linux-gnu-ar rcSTPD drivers/gpu/mediatek/gpufreq/built-in.a drivers/gpu/mediatek/gpufreq/mt6768/built-in.a

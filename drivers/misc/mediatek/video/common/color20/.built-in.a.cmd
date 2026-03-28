@@ -1,1 +1,0 @@
-cmd_drivers/misc/mediatek/video/common/color20/built-in.a :=  rm -f drivers/misc/mediatek/video/common/color20/built-in.a; aarch64-none-linux-gnu-ar rcSTPD drivers/misc/mediatek/video/common/color20/built-in.a drivers/misc/mediatek/video/common/color20/ddp_color.o

@@ -1,1 +1,0 @@
-cmd_drivers/misc/mediatek/flashlight/richtek/built-in.a :=  rm -f drivers/misc/mediatek/flashlight/richtek/built-in.a; aarch64-none-linux-gnu-ar rcSTPD drivers/misc/mediatek/flashlight/richtek/built-in.a drivers/misc/mediatek/flashlight/richtek/rt-flashlight.o drivers/misc/mediatek/flashlight/richtek/rtfled.o

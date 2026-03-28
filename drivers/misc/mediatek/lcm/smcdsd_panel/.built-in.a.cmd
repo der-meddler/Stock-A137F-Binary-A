@@ -1,1 +1,0 @@
-cmd_drivers/misc/mediatek/lcm/smcdsd_panel/built-in.a :=  rm -f drivers/misc/mediatek/lcm/smcdsd_panel/built-in.a; aarch64-none-linux-gnu-ar rcSTPD drivers/misc/mediatek/lcm/smcdsd_panel/built-in.a drivers/misc/mediatek/lcm/smcdsd_panel/panels/built-in.a

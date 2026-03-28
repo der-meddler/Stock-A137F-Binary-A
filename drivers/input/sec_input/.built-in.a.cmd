@@ -1,1 +1,0 @@
-cmd_drivers/input/sec_input/built-in.a :=  rm -f drivers/input/sec_input/built-in.a; aarch64-none-linux-gnu-ar rcSTPD drivers/input/sec_input/built-in.a drivers/input/sec_input/sec_tsp_log.o drivers/input/sec_input/sec_tsp_dumpkey.o drivers/input/sec_input/sec_input_notifier.o drivers/input/sec_input/sec_common_fn.o drivers/input/sec_input/sec_cmd.o

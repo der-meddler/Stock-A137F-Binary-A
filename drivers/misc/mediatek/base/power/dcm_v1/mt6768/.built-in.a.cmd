@@ -1,1 +1,0 @@
-cmd_drivers/misc/mediatek/base/power/dcm_v1/mt6768/built-in.a :=  rm -f drivers/misc/mediatek/base/power/dcm_v1/mt6768/built-in.a; aarch64-none-linux-gnu-ar rcSTPD drivers/misc/mediatek/base/power/dcm_v1/mt6768/built-in.a drivers/misc/mediatek/base/power/dcm_v1/mt6768/mtk_dcm_autogen.o drivers/misc/mediatek/base/power/dcm_v1/mt6768/mtk_dcm_internal.o

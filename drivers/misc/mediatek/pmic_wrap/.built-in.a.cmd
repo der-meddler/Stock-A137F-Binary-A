@@ -1,1 +1,0 @@
-cmd_drivers/misc/mediatek/pmic_wrap/built-in.a :=  rm -f drivers/misc/mediatek/pmic_wrap/built-in.a; aarch64-none-linux-gnu-ar rcSTPD drivers/misc/mediatek/pmic_wrap/built-in.a drivers/misc/mediatek/pmic_wrap/mtk_pmic_wrap.o drivers/misc/mediatek/pmic_wrap/mt6768/built-in.a

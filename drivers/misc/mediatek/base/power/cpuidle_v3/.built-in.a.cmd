@@ -1,1 +1,0 @@
-cmd_drivers/misc/mediatek/base/power/cpuidle_v3/built-in.a :=  rm -f drivers/misc/mediatek/base/power/cpuidle_v3/built-in.a; aarch64-none-linux-gnu-ar rcSTPD drivers/misc/mediatek/base/power/cpuidle_v3/built-in.a drivers/misc/mediatek/base/power/cpuidle_v3/mtk_cpuidle.o

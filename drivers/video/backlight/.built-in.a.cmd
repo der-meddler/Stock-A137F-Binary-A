@@ -1,1 +1,0 @@
-cmd_drivers/video/backlight/built-in.a :=  rm -f drivers/video/backlight/built-in.a; aarch64-none-linux-gnu-ar rcSTPD drivers/video/backlight/built-in.a drivers/video/backlight/lcd.o drivers/video/backlight/backlight.o

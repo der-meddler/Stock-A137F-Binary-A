@@ -1,1 +1,0 @@
-cmd_drivers/misc/mediatek/base/power/spm/built-in.a :=  rm -f drivers/misc/mediatek/base/power/spm/built-in.a; aarch64-none-linux-gnu-ar rcSTPD drivers/misc/mediatek/base/power/spm/built-in.a drivers/misc/mediatek/base/power/spm/common_v1/built-in.a drivers/misc/mediatek/base/power/spm/mt6768/built-in.a

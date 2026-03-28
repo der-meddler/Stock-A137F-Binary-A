@@ -1,1 +1,0 @@
-cmd_drivers/soc/mediatek/devapc/built-in.a :=  rm -f drivers/soc/mediatek/devapc/built-in.a; aarch64-none-linux-gnu-ar rcSTPD drivers/soc/mediatek/devapc/built-in.a drivers/soc/mediatek/devapc/devapc-mtk-common.o drivers/soc/mediatek/devapc/devapc-mt6768.o

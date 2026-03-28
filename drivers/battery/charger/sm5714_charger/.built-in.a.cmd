@@ -1,1 +1,0 @@
-cmd_drivers/battery/charger/sm5714_charger/built-in.a :=  rm -f drivers/battery/charger/sm5714_charger/built-in.a; aarch64-none-linux-gnu-ar rcSTPD drivers/battery/charger/sm5714_charger/built-in.a drivers/battery/charger/sm5714_charger/sm5714_charger.o drivers/battery/charger/sm5714_charger/sm5714_charger_oper.o

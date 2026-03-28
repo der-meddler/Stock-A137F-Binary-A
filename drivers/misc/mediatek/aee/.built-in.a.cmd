@@ -1,1 +1,0 @@
-cmd_drivers/misc/mediatek/aee/built-in.a :=  rm -f drivers/misc/mediatek/aee/built-in.a; aarch64-none-linux-gnu-ar rcSTPD drivers/misc/mediatek/aee/built-in.a drivers/misc/mediatek/aee/aed/built-in.a drivers/misc/mediatek/aee/mrdump/built-in.a drivers/misc/mediatek/aee/hangdet/built-in.a

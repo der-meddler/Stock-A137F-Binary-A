@@ -1,1 +1,0 @@
-cmd_drivers/misc/mediatek/debug_latch/lastbus/built-in.a :=  rm -f drivers/misc/mediatek/debug_latch/lastbus/built-in.a; aarch64-none-linux-gnu-ar rcSTPD drivers/misc/mediatek/debug_latch/lastbus/built-in.a drivers/misc/mediatek/debug_latch/lastbus/lastbus.o drivers/misc/mediatek/debug_latch/lastbus/mt6768/built-in.a
